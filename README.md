@@ -1,1 +1,1 @@
-f
+This is a number guessing game were you can switch between difficulties, clean game menu and more
