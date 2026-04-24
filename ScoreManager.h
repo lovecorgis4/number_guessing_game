@@ -1,7 +1,7 @@
 #pragma once
 #include "Player.h"
 
-class Scoremanager
+class ScoreManager
 {
     public:
      void updateBestScore(Player& player, int attempts);

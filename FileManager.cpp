@@ -8,7 +8,6 @@ int FileManager::loadBestScore(const std::string& filename) {
     if (file >> score) {
         return score;
     }
-
     return 9999;
 }
 

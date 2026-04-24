@@ -1,11 +1,10 @@
 #pragma once
-#include "string"
+#include <string>
 
-class Player 
-{
-    public:
+class Player {
+public:
     std::string name;
     int bestScore;
 
-    Player(std::string name, int bestScore);
+    Player();
 };
