@@ -6,12 +6,15 @@
 
 Game::Game(int maxNumber) {
     this->maxNumber = maxNumber;
-    this->attempts = 0;
-    srand(time(0));
+    //this->attempts = 0;
     secretNumber = rand() % maxNumber + 1;
 }
 
 void Game::run(Player& player) {
+    int attempts = 0; // 🔥 helt lokal, inga buggar
+
+    secretNumber = rand() % maxNumber + 1;
+
     int guess;
 
     std::cout << "Guess a number between 1 and " << maxNumber << "\n";
@@ -28,10 +31,9 @@ void Game::run(Player& player) {
 
     std::cout << "Correct! Attempts: " << attempts << "\n";
 
-    
     sendScoreToServer(player.name, attempts);
 
-        if (attempts < player.bestScore) {
+    if (attempts < player.bestScore) {
         player.bestScore = attempts;
         std::cout << "New best score!\n";
     }

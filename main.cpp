@@ -3,9 +3,11 @@
 #include "Player.h"
 #include "FileManager.h"
 
-void showMenu(); // 👈 viktigt (declaration)
+void showMenu();
 
 int main() {
+      srand(time(0));
+    
     Player player;
     player.bestScore = FileManager::loadBestScore("score.txt");
 
