@@ -4,4 +4,4 @@ To compile use these commands, g++ main.cpp Game.cpp Player.cpp FileManager.cpp 
 -lws2_32 | g++ client.cpp -o client -lws2_32. To run use these, ./server | ./client | ./game
 
 
-When you use "./server" you create the server. When you use "./client" you create a player that only exist in that server. Or you can take a player from another server to put their player in your sever. When you use "./game" you start the game, but you have to create a plyer if you already have one.
+When you use "./server" you create the server. When you use "./client" you create a player that only exist in that server. Or you can take a player from another server to put their player in your sever. When you use "./game" you start the game, but you have to create a player if you already have one.
