@@ -1,8 +1,8 @@
 #pragma once
-#include "Player.h"
+#include <string>
 
-class ScoreManager
-{
-    public:
-     void updateBestScore(Player& player, int attempts);
+class ScoreManager {
+public:
+    int loadBestScore();
+    void saveBestScore(int score);
 };

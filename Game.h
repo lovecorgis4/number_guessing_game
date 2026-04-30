@@ -1,13 +1,17 @@
 #pragma once
+
 #include "Player.h"
 
-class Game
-{
-    private:
-    int secretNumber;
-    int maxNumber;
-
-    public:
+class Game {
+public:
     Game(int maxNumber);
     void run(Player& player);
+    void showMenu();
+
+private:
+    int maxNumber;
+    int secretNumber;
+
+    int generateNumber();
+    void waitForEnter();
 };

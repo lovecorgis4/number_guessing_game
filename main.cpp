@@ -1,25 +1,28 @@
 #include <iostream>
+#include <ctime>
+#include <limits>
+
 #include "Game.h"
 #include "Player.h"
-#include "FileManager.h"
-
-void showMenu();
+#include "ScoreManager.h"
 
 int main() {
-      srand(time(0));
-    
-    Player player;
-    player.bestScore = FileManager::loadBestScore("score.txt");
 
-    std::cout << "Enter your name: ";
-    std::cin >> player.name;
+    srand(time(0));
+
+    Player player;
+    player.name = "Elias";
+
+    ScoreManager sm;
+    player.bestScore = sm.loadBestScore();
 
     Game game(100);
 
     int choice;
 
-    do {
-        showMenu();
+    while (true) {
+
+        game.showMenu();
         std::cin >> choice;
 
         if (choice == 1) {
@@ -29,12 +32,9 @@ int main() {
             std::cout << "Best score: " << player.bestScore << "\n";
         }
         else if (choice == 3) {
-            std::cout << "Goodbye!\n";
+            break;
         }
-
-    } while (choice != 3);
-
-    FileManager::saveBestScore("score.txt", player.bestScore);
+    }
 
     return 0;
 }
