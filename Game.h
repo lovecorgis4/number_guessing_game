@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.h"
+#include <string>
 
 class Game {
 public:
@@ -10,8 +11,12 @@ public:
 
 private:
     int maxNumber;
+    int maxAttempts;
     int secretNumber;
+
+    std::string difficultyName;
 
     int generateNumber();
     void waitForEnter();
+    void selectDifficulty();
 };

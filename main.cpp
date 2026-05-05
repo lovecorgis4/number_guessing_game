@@ -11,12 +11,12 @@ int main() {
     srand(time(0));
 
     Player player;
-    player.name = "Elias";
+    player.name = "NAME";
 
     ScoreManager sm;
-    player.bestScore = sm.loadBestScore();
-
-    Game game(100);
+    player.bestScore = sm.loadBestScore(); 
+    
+    Game game(100); 
 
     int choice;
 
@@ -32,7 +32,9 @@ int main() {
             std::cout << "Best score: " << player.bestScore << "\n";
         }
         else if (choice == 3) {
-            break;
+             std::cout << "Thank you for playing!\n";
+           break;
+           
         }
     }
 
