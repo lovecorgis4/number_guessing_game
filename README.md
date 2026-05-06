@@ -13,3 +13,9 @@ taskkill /IM server.exe /F
 taskkill /IM client.exe /F"  
 They terminate the .exe files.
 
+When using "./sever" I recommend that you open a new terminal window.
+
+When you first play the game make sure to change this line 'player.name = "NAME";' to your name of choice. It is in main.cpp on line 16.
+
+Have a fun time playing
+

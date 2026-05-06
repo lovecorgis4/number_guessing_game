@@ -1,31 +1,34 @@
 #include "ScoreManager.h"
 #include <fstream>
-#include <string>
+#include <iostream>
 
 void ScoreManager::saveBestScore(const std::string& name, int attempts, const std::string& difficulty) {
     std::ofstream file("highscores.txt", std::ios::app);
 
-    if (file.is_open()) {
-        file << name << " " << attempts << " " << difficulty << "\n";
-        file.close();
+    if (!file) {
+        std::cout << "Error creating highscores file!\n";
+        return;
     }
+
+    file << name << " " << attempts << " " << difficulty << "\n";
 }
 
 int ScoreManager::loadBestScore() {
     std::ifstream file("highscores.txt");
 
-    int best = 9999; // fallback if file is empty
+    // If file doesn't exist yet
+    if (!file.is_open()) {
+        return 9999; // default "no score"
+    }
 
+    int best = 9999;
     std::string name, difficulty;
     int attempts;
 
-    if (file.is_open()) {
-        while (file >> name >> attempts >> difficulty) {
-            if (attempts < best) {
-                best = attempts;
-            }
+    while (file >> name >> attempts >> difficulty) {
+        if (attempts < best) {
+            best = attempts;
         }
-        file.close();
     }
 
     return best;

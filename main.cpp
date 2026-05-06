@@ -1,12 +1,14 @@
 #include <iostream>
 #include <ctime>
 #include <limits>
+#include "fstream"
 
 #include "Game.h"
 #include "Player.h"
 #include "ScoreManager.h"
 
 int main() {
+std::ofstream("highscores.txt", std::ios::app);
 
     srand(time(0));
 
