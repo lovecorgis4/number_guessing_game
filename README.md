@@ -17,5 +17,7 @@ When using "./sever" I recommend that you open a new terminal window.
 
 When you first play the game make sure to change this line 'player.name = "NAME";' to your name of choice. It is in main.cpp on line 16.
 
-Have a fun time playing
+To change the difficulty change the number '7' to your number of choice on this line 'this->maxAttempts = 7;' in Game.cpp on line 9
+
+Have a fun time playing!
 
