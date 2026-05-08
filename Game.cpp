@@ -103,6 +103,7 @@ void Game::run(Player& player) {
     ScoreManager sm;
 
     if (guess == secretNumber) {
+        std::cout << "The number was " << secretNumber <<"\n";
         std::cout << "You won in " << attempts << " attempts!\n";
 
         if (attempts < player.bestScore) {
